@@ -27,6 +27,13 @@
                     <li>@Html.ActionLink("Registration", "Index", "Registration")</li>
                     <li>@Html.ActionLink("User", "Index", "User")</li>
                 </ul>
+                <ul class="nav navbar-right" styyle="color=white">
+                    @if (Session["userid"] != null)
+                    {
+                        <h4 style="color: white">Hello @Session["UserName"]</h4>
+                        @Html.ActionLink("Logout","Logout","Login")
+                    }
+                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
